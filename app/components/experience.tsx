@@ -34,7 +34,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="w-full max-w-5xl px-6 py-10 text-white">
+<section id="experience" className="w-full max-w-5xl px-6 py-10 text-white min-h-screen">
       <motion.h2
         className="text-4xl font-bold mb-12 text-center"
         style={{ color: "#CEAE7B" }}

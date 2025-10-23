@@ -41,7 +41,7 @@ export default function Skills() {
               <FaCode className="text-5xl spinning-3d mb-4" />
               <h3 className="font-semibold mb-2">Languages</h3>
               <p className="text-s leading-relaxed">
-                JavaScript, TypeScript, Python, Java, C#, C++
+                JavaScript, Java, C#, C++, HTML, CSS
               </p>
             </div>
           </motion.div>
@@ -60,7 +60,7 @@ export default function Skills() {
               <FaLayerGroup className="text-5xl spinning-3d mb-4" />
               <h3 className="font-semibold mb-2">Frameworks & Libraries</h3>
               <p className="text-s leading-relaxed">
-                React, React Native, Next.js, Vite, Tailwind CSS, Bootstrap, ASP.NET
+                React, React Native, Next, Vite, Tailwind, Bootstrap, ASP.NET, Node
               </p>
             </div>
           </motion.div>
@@ -79,8 +79,9 @@ export default function Skills() {
               <FaTools className="text-5xl spinning-3d mb-4" />
               <h3 className="font-semibold mb-2">Tools & Platforms</h3>
               <p className="text-s leading-relaxed">
-                Git, GitHub, Azure DevOps, Visual Studio, VS Code, Android Studio,
-                Figma, Node, SQL, MySQL, APIs, ChatGPT, etc.
+                GitHub, SourceSafe, Azure DevOps, Visual Studio, VS Code, Android Studio, 
+                Figma, Canva Pro, Sublime, NetBeans, SQL, MSSQL, MySQL, 
+                Crystal Report, NetSupport, SQL Server Profiler, UltraViewer, ChatGPT, Grok, APIs
               </p>
             </div>
           </motion.div>

@@ -9,7 +9,7 @@ export default function Contact() {
       <h2 className="text-4xl font-bold mb-4 text-[#c39449] uppercase tracking-wide">
         get in touch
       </h2>
-      <p className="text-zinc-700 mb-6">
+      <p className="text-zinc-900 mb-6">
         feel free to reach out via email or connect on github / linkedin.
       </p>
 
