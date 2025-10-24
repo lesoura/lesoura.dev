@@ -168,9 +168,15 @@ export default function Projects() {
 
   return (
     <section id="projects" className="w-full max-w-7xl px-6 py-10 mx-auto relative">
-      <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: "#CEAE7B" }}>
-        PROJECTS
-      </h2>
+      <motion.h2
+          className="text-4xl font-bold mb-12 text-center"
+          style={{ color: "#CEAE7B" }}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          PROJECTS
+      </motion.h2>
 
       {/* Carousel */}
       <div className="relative flex items-center justify-center">

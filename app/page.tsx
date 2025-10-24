@@ -8,6 +8,7 @@ import Skills from "./components/skills";
 import Projects from "./components/projects";
 import Experience from "./components/experience";
 import Contact from "./components/contact";
+import SplashCursor from "@/reactbits/SplashCursor";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -66,6 +67,9 @@ export default function Home() {
       />
 
       <Header />
+      <div style={{ opacity: 0.2 }}>
+        <SplashCursor />
+      </div>
 
       <section id="about" className="w-full flex flex-col items-start bg-black">
         <Hero />

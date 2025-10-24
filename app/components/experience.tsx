@@ -104,7 +104,13 @@ export default function Experience() {
                     {exp.year}
                   </span>
                   <div className="bg-zinc-900 p-4 rounded-2xl shadow-lg relative inline-block">
-                    <span className="absolute top-1/2 -right-5 transform -translate-y-1/2 w-4 h-4 bg-[#c39449] rounded-full border-2 border-zinc-700"></span>
+                    <motion.span
+                      className="absolute top-1/2 -right-5 transform -translate-y-1/2 w-4 h-4 bg-[#c39449] rounded-full border-2 border-zinc-700"
+                      variants={{
+                        rest: { boxShadow: "0 0 0px #c39449" },
+                        hover: { boxShadow: "0 0 12px 4px #c39449", transition: { duration: 0.3 } },
+                      }}
+                    ></motion.span>
                     <h3 className="text-lg font-semibold mt-1">{exp.title}</h3>
                     <p className="text-zinc-300">{exp.company}</p>
                     {exp.details && (
@@ -148,7 +154,13 @@ export default function Experience() {
                     {exp.year}
                   </span>
                   <div className="bg-zinc-900 p-4 rounded-2xl shadow-lg relative inline-block">
-                    <span className="absolute top-1/2 -left-5 transform -translate-y-1/2 w-4 h-4 bg-[#c39449] rounded-full border-2 border-zinc-700"></span>
+                    <motion.span
+                      className="absolute top-1/2 -left-5 transform -translate-y-1/2 w-4 h-4 bg-[#c39449] rounded-full border-2 border-zinc-700"
+                      variants={{
+                        rest: { boxShadow: "0 0 0px #c39449" },
+                        hover: { boxShadow: "0 0 12px 4px #c39449", transition: { duration: 0.3 } },
+                      }}
+                    ></motion.span>
                     <h3 className="text-lg font-semibold mt-1">{exp.title}</h3>
                     <p className="text-zinc-300">{exp.company}</p>
                     {exp.details && (

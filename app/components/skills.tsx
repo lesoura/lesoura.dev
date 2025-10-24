@@ -21,12 +21,15 @@ export default function Skills() {
       `}</style>
 
       <section id="skills" className="w-full max-w-5xl px-6 py-16 mx-auto">
-        <h2
+        <motion.h2
           className="text-4xl font-bold mb-12 text-center"
           style={{ color: "#CEAE7B" }}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
           SKILLS
-        </h2>
+        </motion.h2>
 
         <div className="flex flex-col sm:flex-row justify-center items-start gap-6 text-center text-white">
           {/* Languages */}
