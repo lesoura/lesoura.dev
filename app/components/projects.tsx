@@ -183,7 +183,7 @@ export default function Projects() {
         {/* Prev Button */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full z-10"
+          className="absolute left-0 bg-black/40 text-white p-3 rounded-full z-10 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
         >
           <FaChevronLeft />
         </button>
@@ -232,7 +232,7 @@ export default function Projects() {
         {/* Next Button */}
         <button
           onClick={nextSlide}
-          className="absolute right-0 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full z-10"
+          className="absolute right-0 bg-black/40 text-white p-3 rounded-full z-10 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
         >
           <FaChevronRight />
         </button>
