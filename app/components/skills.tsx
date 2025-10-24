@@ -31,10 +31,10 @@ export default function Skills() {
         <div className="flex flex-col sm:flex-row justify-center items-start gap-6 text-center text-white">
           {/* Languages */}
           <motion.div
-            className="relative group p-6 overflow-hidden rounded-lg cursor-pointer sm:w-1/3 h-[370px] flex flex-col items-center text-center"
+            className="relative group p-6 overflow-hidden rounded-lg cursor-pointer sm:w-1/3 h-[380px] flex flex-col items-center text-center"
             initial={{ x: -200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#CEAE7B] to-[#CEAE7B] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-0"></div>
@@ -83,7 +83,7 @@ export default function Skills() {
             className="relative group p-6 overflow-hidden rounded-lg cursor-pointer sm:w-1/3 h-[380px] flex flex-col items-center text-center"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#CEAE7B] to-[#CEAE7B] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-0"></div>
@@ -112,7 +112,7 @@ export default function Skills() {
                     Version Control & Collaboration:
                   </span><br />
                   <div className="text-center transition-all duration-500 group-hover:text-black">
-                    GitHub, Azure DevOps
+                    GitHub, Azure DevOps, SourceSafe
                   </div>
                 </li>
                 <li>
@@ -132,28 +132,45 @@ export default function Skills() {
             className="relative group p-6 overflow-hidden rounded-lg cursor-pointer sm:w-1/3 h-[380px] flex flex-col items-center text-center"
             initial={{ x: 200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#CEAE7B] to-[#CEAE7B] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-0"></div>
             <div className="relative z-10 flex flex-col items-center transition-colors duration-500 group-hover:text-black">
               <FaTools className="text-5xl spinning-3d mb-4" />
-              <h3 className="font-semibold mb-2">Design & Productivity Tools</h3>
+              <h3 className="font-semibold mb-2">Design, Reporting, & Support</h3>
               <ul className="list-disc list-inside text-left text-s leading-relaxed">
                 <li>
                   <span className="text-[#CEAE7B] group-hover:text-black group-hover:underline transition-all duration-500">
                     Design / Graphics:
                   </span><br />
                   <div className="text-center transition-all duration-500 group-hover:text-black">
-                    Figma, Adobe Photoshop, Canva Pro
+                    Figma, Adobe Photoshop, Canva
                   </div>
                 </li>
                 <li>
                   <span className="text-[#CEAE7B] group-hover:text-black group-hover:underline transition-all duration-500">
-                    Office / Productivity:
+                    Reporting & Data Tools:
                   </span><br />
                   <div className="text-center transition-all duration-500 group-hover:text-black">
+                    Crystal Report
+                  </div>
+                  <div className="text-center transition-all duration-500 group-hover:text-black">
+                    Text Blast
+                  </div>
+                  <div className="text-center transition-all duration-500 group-hover:text-black">
                     Microsoft 365
+                  </div>
+                </li>
+                <li>
+                  <span className="text-[#CEAE7B] group-hover:text-black group-hover:underline transition-all duration-500">
+                    User Support:
+                  </span><br />
+                  <div className="text-center transition-all duration-500 group-hover:text-black">
+                    UltraViewer
+                  </div>
+                  <div className="text-center transition-all duration-500 group-hover:text-black">
+                    NetSupport
                   </div>
                 </li>
               </ul>

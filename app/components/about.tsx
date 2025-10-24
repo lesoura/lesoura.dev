@@ -58,8 +58,11 @@ export default function About() {
         <p className="text-zinc-900 leading-relaxed mb-6 text-justify">
           I’m a passionate developer dedicated to crafting smooth, engaging, and user-friendly digital experiences. With a strong foundation in Information Technology, I thrive on exploring new tools and technologies to push both creative and technical boundaries.
         </p>
-        <p className="text-zinc-900 leading-relaxed text-justify">
+        <p className="text-zinc-900 leading-relaxed mb-6  text-justify">
           I love collaborating with people and exploring new features and improvements. I consistently follow through on requests, provide active support, and share my knowledge to help users navigate challenges effectively. My goal is to deliver solutions that are both reliable and intuitive, ensuring a smooth experience for everyone involved.
+        </p>
+        <p className="text-zinc-900 leading-relaxed text-justify">
+          Outside of tech, I love dinosaurs, history, classic motorcycles, gaming, and shows like The Boys, Peacemaker, Rick & Morty, Cyberpunk: Edgerunners, and Invincible. I also enjoy working out, kickboxing, traveling, my idol is Khabib, and my favorite song is The Woods by Hollow Coves.
         </p>
       </motion.div>
     </section>
