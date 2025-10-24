@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useEffect } from "react";
 
 interface Project {
   id: number;
@@ -156,6 +157,14 @@ export default function Projects() {
     const start = current * itemsPerSlide;
     return projects.slice(start, start + itemsPerSlide);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // change slide every 5 seconds
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, [current]); // re-run if current changes
 
   return (
     <section id="projects" className="w-full max-w-7xl px-6 py-10 mx-auto relative">
