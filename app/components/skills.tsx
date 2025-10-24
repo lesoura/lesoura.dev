@@ -10,6 +10,8 @@ export default function Skills() {
         .spinning-3d {
           transform-style: preserve-3d;
           animation: spinY 4s linear infinite;
+          will-change: transform;
+          backface-visibility: visible;
         }
 
         @keyframes spinY {
@@ -27,16 +29,15 @@ export default function Skills() {
         </h2>
 
         <div className="flex flex-col sm:flex-row justify-center items-start gap-6 text-center text-white">
-          {/* Languages - Left */}
+          {/* Languages */}
           <motion.div
             className="relative group p-6 overflow-hidden rounded-lg cursor-pointer sm:w-1/3 h-[280px] flex flex-col items-center text-center"
             initial={{ x: -200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#CEAE7B] to-[#CEAE7B] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-0"></div>
-
             <div className="relative z-10 flex flex-col items-center transition-colors duration-500 group-hover:text-black">
               <FaCode className="text-5xl spinning-3d mb-4" />
               <h3 className="font-semibold mb-2">Languages</h3>
@@ -46,16 +47,15 @@ export default function Skills() {
             </div>
           </motion.div>
 
-          {/* Frameworks & Libraries - Center */}
+          {/* Frameworks & Libraries */}
           <motion.div
             className="relative group p-6 overflow-hidden rounded-lg cursor-pointer sm:w-1/3 h-[280px] flex flex-col items-center text-center"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#CEAE7B] to-[#CEAE7B] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-0"></div>
-
             <div className="relative z-10 flex flex-col items-center transition-colors duration-500 group-hover:text-black">
               <FaLayerGroup className="text-5xl spinning-3d mb-4" />
               <h3 className="font-semibold mb-2">Frameworks & Libraries</h3>
@@ -65,16 +65,15 @@ export default function Skills() {
             </div>
           </motion.div>
 
-          {/* Tools & Platforms - Right */}
+          {/* Tools & Platforms */}
           <motion.div
             className="relative group p-6 overflow-hidden rounded-lg cursor-pointer sm:w-1/3 h-[280px] flex flex-col items-center text-center"
             initial={{ x: 200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#CEAE7B] to-[#CEAE7B] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-0"></div>
-
             <div className="relative z-10 flex flex-col items-center transition-colors duration-500 group-hover:text-black">
               <FaTools className="text-5xl spinning-3d mb-4" />
               <h3 className="font-semibold mb-2">Tools & Platforms</h3>

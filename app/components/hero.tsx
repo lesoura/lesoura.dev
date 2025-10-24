@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaFileAlt } from "react-icons/fa";
+import BlurText from "@/reactbits/BlurText";
 
 export default function Hero() {
   const titles = [
@@ -71,7 +72,17 @@ export default function Hero() {
         viewport={{ amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h1 className="text-6xl sm:text-7xl font-bold mb-6">Hey, I’m Lester 👋</h1>
+
+      <BlurText
+        text="Hey, I’m Lester 👋"
+        delay={150}
+        animateBy="words"
+        direction="top"
+        className="text-6xl sm:text-7xl font-bold mb-6"
+        animationFrom={undefined}
+        animationTo={undefined}
+        onAnimationComplete={() => {}}
+      />
 
         <p className="text-[#CEAE7B] text-3xl sm:text-4xl font-semibold mb-10 max-w-full overflow-x-auto whitespace-nowrap">
           {displayText}
