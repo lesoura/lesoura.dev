@@ -81,7 +81,7 @@ export default function Skills() {
               <p className="text-s leading-relaxed">
                 GitHub, SourceSafe, Azure DevOps, Visual Studio, VS Code, Android Studio, 
                 Figma, Canva Pro, Sublime, NetBeans, SQL, MSSQL, MySQL, 
-                Crystal Report, NetSupport, SQL Server Profiler, UltraViewer, ChatGPT, Grok, APIs
+                Crystal Report, Postman, NetSupport, SQL Server Profiler, UltraViewer, ChatGPT, Grok, APIs
               </p>
             </div>
           </motion.div>
