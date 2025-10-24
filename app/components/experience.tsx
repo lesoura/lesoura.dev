@@ -12,7 +12,7 @@ export default function Experience() {
       image: "/images/mtmas-cdv.png",
     },
     {
-      year: "2023",
+      year: "2023 - 2023",
       title: "Mobile Developer (Intern)",
       company: "Xure",
       type: "Work",
