@@ -82,7 +82,7 @@ const projects: Project[] = [
     title: "XuREELS",
     description:
       "UI/UX research project for XURE, featuring a Reels-style video display and processing system. Includes self-made animations such as the Hype React, an interactive navbar, and a walkthrough tooltip designed to guide and engage first-time users.",
-    media: "/images/xure-header2.png",
+    media: "/images/xureels4.png",
     type: "image",
     category: "Mobile",
     header: "/images/xure-header2.png",
@@ -99,13 +99,13 @@ const projects: Project[] = [
   },
   {
     id: 9,
-    title: "PinchableImage",
+    title: "OLA - Mobile",
     description:
-      "UI/UX research project for XURE replicating Instagram’s image interaction. Allows users to pinch to zoom in or out, drag images freely, and smoothly return them to their original position upon release — a feature successfully implemented in the XURE app.",
-    media: "/images/xure-header2.png",
+      "OLA Mobile is a React Native app for applying and managing loans. It connects to an API for real-time data and authentication, featuring an interactive dashboard, modern UI, and smooth navigation for efficient loan management.",
+    media: "/images/ola-mobile3.png",
     type: "image",
     category: "Mobile",
-    header: "/images/xure-header2.png",
+    header: "/images/mtmas-cdv.png",
   },
 ];
 
@@ -134,29 +134,51 @@ export default function Projects() {
       case 3:
         return (
           <>
-            <span className="bg-green-500 text-white px-2 py-0.5 rounded text-xs">React</span>
-            <span className="bg-teal-500 text-white px-2 py-0.5 rounded text-xs">API</span>
-          </>
-        );
-      case 4:
-        return (
-          <>
             <span className="bg-blue-600 text-white px-2 py-0.5 rounded text-xs">C#</span>
             <span className="bg-blue-500 text-white px-2 py-0.5 rounded text-xs">ASP.NET MVC</span>
             <span className="bg-gray-600 text-white px-2 py-0.5 rounded text-xs">MSSQL</span>
           </>
         );
+      case 4:
+        return (
+          <>
+            <span className="bg-green-500 text-white px-2 py-0.5 rounded text-xs">React</span>
+          </>
+        );
       case 5:
         return (
           <>
-            <span className="bg-purple-500 text-white px-2 py-0.5 rounded text-xs">React Native EXPO</span>
+            <span className="bg-green-500 text-white px-2 py-0.5 rounded text-xs">React</span>
             <span className="bg-teal-500 text-white px-2 py-0.5 rounded text-xs">API</span>
           </>
         );
       case 6:
+         return (
+          <>
+            <span className="bg-[#CEAE7B] text-white px-2 py-0.5 rounded text-xs">React Native Expo</span>
+            <span className="bg-teal-500 text-white px-2 py-0.5 rounded text-xs">API</span>
+          </>
+        );
       case 7:
+        return (
+          <>
+            <span className="bg-purple-700 text-white px-2 py-0.5 rounded text-xs">React Native CLI</span>
+          </>
+        );
       case 8:
-        return <span className="bg-purple-700 text-white px-2 py-0.5 rounded text-xs">React Native CLI</span>;
+        return (
+          <>
+            <span className="bg-purple-700 text-white px-2 py-0.5 rounded text-xs">React Native CLI</span>
+            <span className="bg-teal-500 text-white px-2 py-0.5 rounded text-xs">API</span>
+          </>
+        );
+      case 9:
+         return (
+          <>
+            <span className="bg-[#CEAE7B] text-white px-2 py-0.5 rounded text-xs">React Native Expo</span>
+            <span className="bg-teal-500 text-white px-2 py-0.5 rounded text-xs">API</span>
+          </>
+        );
       default:
         return null;
     }
