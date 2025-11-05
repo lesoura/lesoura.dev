@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -10,7 +10,7 @@ export default function Contact() {
         get in touch
       </h2>
       <p className="text-zinc-900 mb-6">
-        feel free to reach out via email or connect on github / linkedin.
+        feel free to reach out via email or connect on github / linkedin / instagram.
       </p>
 
       <div className="flex flex-wrap justify-center gap-6">
@@ -35,6 +35,14 @@ export default function Contact() {
           className="flex items-center justify-center gap-2 w-40 px-6 py-3 rounded-full bg-black text-white hover:bg-zinc-800 transition"
         >
           <FaLinkedin /> LinkedIn
+        </a>
+
+        <a
+          href="https://www.instagram.com/lesouraa_?igsh=MWt4NHE2bm1nNWxmbw%3D%3D&utm_source=qr"
+          target="_blank"
+          className="flex items-center justify-center gap-2 w-40 px-6 py-3 rounded-full bg-black text-white hover:bg-zinc-800 transition"
+        >
+          <FaInstagram /> Instagram
         </a>
       </div>
     </section>

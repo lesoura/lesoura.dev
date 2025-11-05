@@ -16,7 +16,6 @@ export default function Hero() {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Rotate titles every 3 seconds
   useEffect(() => {
     const changeTitle = setInterval(() => {
       setCurrent((prev) => (prev + 1) % titles.length);
@@ -24,11 +23,9 @@ export default function Hero() {
     return () => clearInterval(changeTitle);
   }, []);
 
-  // Decrypt animation when title changes
   useEffect(() => {
     const fullText = titles[current];
     let i = 0;
-
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       let tempText = "";
@@ -36,7 +33,7 @@ export default function Hero() {
         if (j <= i) tempText += fullText[j];
         else tempText += chars[Math.floor(Math.random() * chars.length)];
       }
-      setDisplayText(tempText.slice(0, 25)); // limit to 25 chars
+      setDisplayText(tempText.slice(0, 25));
       i++;
       if (i > fullText.length && intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -72,17 +69,30 @@ export default function Hero() {
         viewport={{ amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
+        {/* Added image here */}
+        <motion.div
+          className="relative mb-6 inline-block backdrop-blur-md rounded-2xl bg-white/10 p-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <img
+            src="/images/ig-gold.png"
+            alt="Profile QR"
+            className="w-32 sm:w-40 rounded-xl"
+          />
+        </motion.div>
 
-      <BlurText
-        text="Hey, I’m Lester 👋"
-        delay={150}
-        animateBy="words"
-        direction="top"
-        className="text-6xl sm:text-7xl font-bold mb-6"
-        animationFrom={undefined}
-        animationTo={undefined}
-        onAnimationComplete={() => {}}
-      />
+        <BlurText
+          text="Hey, I’m Lester 👋"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-6xl sm:text-7xl font-bold mb-6"
+          animationFrom={undefined}
+          animationTo={undefined}
+          onAnimationComplete={() => {}}
+        />
 
         <p className="text-[#CEAE7B] text-3xl sm:text-4xl font-semibold mb-10 max-w-full overflow-x-auto whitespace-nowrap">
           {displayText}

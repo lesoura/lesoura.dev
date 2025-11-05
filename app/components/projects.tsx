@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useEffect } from "react";
 
 interface Project {
   id: number;
@@ -39,16 +38,6 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "CryptoFaceAuth",
-    description:
-      "React web app with face recognition login, Axios-based account verification from a local server, and real-time crypto value graphics.",
-    media: "/images/cryptofaceauth-header.png",
-    type: "image",
-    category: "Web",
-    header: "/images/cryptofaceauth-header.png",
-  },
-  {
-    id: 4,
     title: "Web-Based Booking & Reservation System",
     description:
       "Capstone project proposed for SJA Travel & Tours. A web-based system that manages tour bookings, reservations, and vehicle rentals. Features account and role management, an administrator dashboard, and utilizes a local on-disk MSSQL connection for data storage.",
@@ -57,9 +46,29 @@ const projects: Project[] = [
     category: "Web",
     header: "/images/sja-header.png",
   },
-  // MOBILE projects
+  {
+  id: 4,
+  title: "Cifra's Pizza",
+  description:
+    "Web-based interactive pizzeria website for Cifra’s Pizza featuring a dynamic hero section, animated carousel, glowing buttons, and responsive layout. Designed for an engaging, modern browsing experience built with React and Framer Motion.",
+  media: "/images/cifras-tab-icon.png",
+  type: "image",
+  category: "Web",
+  header: "/images/cifras-tab-icon.png",
+  },
   {
     id: 5,
+    title: "CryptoFaceAuth",
+    description:
+      "React web app with face recognition login, Axios-based account verification from a local server, and real-time crypto value graphics.",
+    media: "/images/cryptofaceauth-header.png",
+    type: "image",
+    category: "Web",
+    header: "/images/cryptofaceauth-header.png",
+  },
+  // MOBILE projects
+  {
+    id: 6,
     title: "GrowAGardenApp",
     description:
       "Displays the latest Grow a Garden stock updates using the API, refreshing every 5 minutes to mirror in-game changes. Built with React Native & Expo, featuring a tab system, interactive floating action button, camera access, image storage, and basic UI components.",
@@ -69,7 +78,7 @@ const projects: Project[] = [
     header: "/images/gag-header.png",
   },
   {
-    id: 6,
+    id: 7,
     title: "XuREELS",
     description:
       "UI/UX research project for XURE, featuring a Reels-style video display and processing system. Includes self-made animations such as the Hype React, an interactive navbar, and a walkthrough tooltip designed to guide and engage first-time users.",
@@ -79,7 +88,7 @@ const projects: Project[] = [
     header: "/images/xure-header2.png",
   },
   {
-    id: 7,
+    id: 8,
     title: "FakeStore - API",
     description:
       "UI/UX research project for XURE exploring API integration using Axios. Focuses on proper data presentation with features like skeleton rendering, up/down navigation buttons, and an interactive navbar — serving as a design exploration and development practice for XURE.",
@@ -89,7 +98,7 @@ const projects: Project[] = [
     header: "/images/publicapi-header.png",
   },
   {
-    id: 8,
+    id: 9,
     title: "PinchableImage",
     description:
       "UI/UX research project for XURE replicating Instagram’s image interaction. Allows users to pinch to zoom in or out, drag images freely, and smoothly return them to their original position upon release — a feature successfully implemented in the XURE app.",
@@ -159,16 +168,37 @@ export default function Projects() {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000); // change slide every 5 seconds
-
-    return () => clearInterval(interval); // cleanup on unmount
-  }, [current]); // re-run if current changes
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [current]);
 
   return (
-    <section id="projects" className="w-full max-w-7xl px-6 py-10 mx-auto relative">
-      <motion.h2
+<section id="projects" className="relative w-full py-10 overflow-hidden" style={{ height: "90vh" }}>
+      {/* LEFT accent image */}
+      <motion.img
+        src="/images/xureels4.png"
+        alt="Left Accent"
+        className="absolute -left-18 top-3/4 -translate-y-1/2 w-[380px] opacity-30 pointer-events-none select-none z-20"
+        initial={{ x: -200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 0.9 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: false }}
+      />
+
+      {/* RIGHT accent image */}
+      <motion.img
+        src="/images/ola-mobile3.png"
+        alt="Right Accent"
+        className="absolute -right-15 top-2/6 -translate-y-1/2 w-[350px] opacity-30 pointer-events-none select-none z-20"
+        initial={{ x: 200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 0.9 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: false }}
+      />
+
+      {/* Main Content */}
+      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto">
+        <motion.h2
           className="text-4xl font-bold mb-12 text-center"
           style={{ color: "#CEAE7B" }}
           initial={{ opacity: 0, y: -20 }}
@@ -176,79 +206,81 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           PROJECTS
-      </motion.h2>
+        </motion.h2>
 
-      {/* Carousel */}
-      <div className="relative flex items-center justify-center">
-        {/* Prev Button */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 bg-black/40 text-white p-3 rounded-full z-10 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
-        >
-          <FaChevronLeft />
-        </button>
-
-        {/* Slide Group */}
-        <div className="overflow-hidden w-full">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.4 }}
-            className="flex justify-center gap-6"
+        {/* Carousel */}
+        <div className="relative flex items-center justify-center">
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 bg-black/40 text-white p-3 rounded-full z-30 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
           >
-            {getVisibleProjects().map((project) => (
-              <div
-                key={project.id}
-                className="w-[350px] bg-zinc-900 rounded-lg text-zinc-50 shadow-lg flex flex-col"
-              >
-                {project.header && (
-                  <img
-                    src={project.header}
-                    alt={project.title}
-                    className="w-full h-40 object-contain bg-black rounded-t-lg border-b-4 border-[#CEAE7B] p-1"
-                  />
-                )}
-                <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="font-semibold text-lg">{project.title}</h3>
-                  <p className="text-zinc-400 text-sm break-words text-justify">{project.description}</p>
-                  <div className="mt-2 mb-2 flex flex-wrap gap-1">{renderLegend(project.id)}</div>
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="mt-auto relative overflow-hidden border border-[#CEAE7B] text-[#CEAE7B] font-semibold py-1 px-3 rounded group"
-                  >
-                    <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                      Explore
-                    </span>
-                    <span className="absolute inset-0 bg-[#CEAE7B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
-                  </button>
+            <FaChevronLeft />
+          </button>
+
+          <div className="overflow-hidden w-full">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.4 }}
+              className="flex justify-center gap-6"
+            >
+              {getVisibleProjects().map((project) => (
+                <div
+                  key={project.id}
+                  className="w-[350px] min-h-[470px] bg-zinc-900 rounded-lg text-zinc-50 shadow-lg flex flex-col"
+                >
+                  {project.header && (
+                    <img
+                      src={project.header}
+                      alt={project.title}
+                      className="w-full h-40 object-contain bg-black rounded-t-lg border-b-4 border-[#CEAE7B] p-1"
+                    />
+                  )}
+                  <div className="p-4 flex flex-col flex-grow">
+                    <h3 className="font-semibold text-lg">{project.title}</h3>
+                    <p className="text-zinc-400 text-sm break-words text-justify">
+                      {project.description}
+                    </p>
+                    <div className="mt-2 mb-2 flex flex-wrap gap-1">
+                      {renderLegend(project.id)}
+                    </div>
+                    <button
+                      onClick={() => setSelectedProject(project)}
+                      className="mt-auto relative overflow-hidden border border-[#CEAE7B] text-[#CEAE7B] font-semibold py-1 px-3 rounded group"
+                    >
+                      <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                        Explore
+                      </span>
+                      <span className="absolute inset-0 bg-[#CEAE7B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 bg-black/40 text-white p-3 rounded-full z-30 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
+          >
+            <FaChevronRight />
+          </button>
         </div>
 
-        {/* Next Button */}
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 bg-black/40 text-white p-3 rounded-full z-10 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
-        >
-          <FaChevronRight />
-        </button>
-      </div>
-
-      {/* Dots */}
-      <div className="flex justify-center mt-4 gap-2">
-        {Array.from({ length: totalSlides }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full ${
-              index === current ? "bg-[#CEAE7B]" : "bg-zinc-600"
-            } transition`}
-          />
-        ))}
+        {/* Dots */}
+        <div className="flex justify-center mt-4 gap-2">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-3 h-3 rounded-full ${
+                index === current ? "bg-[#CEAE7B]" : "bg-zinc-600"
+              } transition`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Modal */}
