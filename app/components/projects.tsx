@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Check Disbursement Voucher (CDV)",
     description:
       "Web-based system for overseeing and checking disbursement vouchers, processing payments, managing accounts, user roles, and posting periods. Retrieves and populates reports via Crystal Reports using server-side API routes. Soon to be integrated with MT Forms for a seamless workflow.",
-    media: "/images/mtmas-cdv.png",
+    media: "/personal-projects/cdv.png",
     type: "image",
     category: "Web",
     header: "/images/mtmas-cdv.png",
@@ -31,7 +31,7 @@ const projects: Project[] = [
     title: "MT Forms",
     description:
       "Web-based system that transitions the company away from physical documents. Handles purchase requisitions, canvassing, purchase orders, requests for payment, and cash advances. Utilizes server-side API routes for data handling, includes account and role management, digital signature storage through Wacom signature pad integration, and form generation via Crystal Reports.",
-    media: "/images/mt-forms-icon.png",
+    media: "/personal-projects/mt-forms.png",
     type: "image",
     category: "Web",
     header: "/images/mt-forms-icon.png",
@@ -41,7 +41,7 @@ const projects: Project[] = [
     title: "Web-Based Booking & Reservation System",
     description:
       "Capstone project proposed for SJA Travel & Tours. A web-based system that manages tour bookings, reservations, and vehicle rentals. Features account and role management, an administrator dashboard, and utilizes a local on-disk MSSQL connection for data storage.",
-    media: "/images/sja-header.png",
+    media: "/personal-projects/sja.png",
     type: "image",
     category: "Web",
     header: "/images/sja-header.png",
@@ -51,7 +51,7 @@ const projects: Project[] = [
   title: "Cifra's Pizza",
   description:
     "Web-based interactive pizzeria website for Cifra’s Pizza featuring a dynamic hero section, animated carousel, glowing buttons, and responsive layout. Designed for an engaging, modern browsing experience built with React and Framer Motion.",
-  media: "/images/cifras-tab-icon.png",
+  media: "/personal-projects/cifras-pizza.png",
   type: "image",
   category: "Web",
   header: "/images/cifras-tab-icon.png",
@@ -61,7 +61,7 @@ const projects: Project[] = [
     title: "CryptoFaceAuth",
     description:
       "React web app with face recognition login, Axios-based account verification from a local server, and real-time crypto value graphics.",
-    media: "/images/cryptofaceauth-header.png",
+    media: "/personal-projects/crypto-react.png",
     type: "image",
     category: "Web",
     header: "/images/cryptofaceauth-header.png",
@@ -72,7 +72,7 @@ const projects: Project[] = [
     title: "GrowAGardenApp",
     description:
       "Displays the latest Grow a Garden stock updates using the API, refreshing every 5 minutes to mirror in-game changes. Built with React Native & Expo, featuring a tab system, interactive floating action button, camera access, image storage, and basic UI components.",
-    media: "/images/gag-header.png",
+    media: "/personal-projects/gag-app.png",
     type: "image",
     category: "Mobile",
     header: "/images/gag-header.png",
@@ -82,7 +82,7 @@ const projects: Project[] = [
     title: "XuREELS",
     description:
       "UI/UX research project for XURE, featuring a Reels-style video display and processing system. Includes self-made animations such as the Hype React, an interactive navbar, and a walkthrough tooltip designed to guide and engage first-time users.",
-    media: "/images/xureels4.png",
+    media: "/personal-projects/xureels.png",
     type: "image",
     category: "Mobile",
     header: "/images/xure-header2.png",
@@ -92,7 +92,7 @@ const projects: Project[] = [
     title: "FakeStore - API",
     description:
       "UI/UX research project for XURE exploring API integration using Axios. Focuses on proper data presentation with features like skeleton rendering, up/down navigation buttons, and an interactive navbar — serving as a design exploration and development practice for XURE.",
-    media: "/images/publicapi-header.png",
+    media: "/personal-projects/fakestore-api.png",
     type: "image",
     category: "Mobile",
     header: "/images/publicapi-header.png",
@@ -102,7 +102,7 @@ const projects: Project[] = [
     title: "OLA - Mobile",
     description:
       "OLA Mobile is a React Native app for applying and managing loans. It connects to an API for real-time data and authentication, featuring an interactive dashboard, modern UI, and smooth navigation for efficient loan management.",
-    media: "/images/ola-mobile3.png",
+    media: "/personal-projects/ola-mobile.png",
     type: "image",
     category: "Mobile",
     header: "/images/mtmas-cdv.png",
@@ -316,7 +316,7 @@ export default function Projects() {
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              className="bg-zinc-900 rounded-lg max-w-3xl w-full overflow-hidden"
+              className="bg-zinc-900/20 backdrop-blur-md rounded-[100px] max-w-3xl w-full overflow-hidden"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
