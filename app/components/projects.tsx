@@ -200,7 +200,7 @@ export default function Projects() {
       <motion.img
         src="/images/xureels4.png"
         alt="Left Accent"
-        className="absolute -left-18 top-3/4 -translate-y-1/2 w-[380px] opacity-30 pointer-events-none select-none z-20"
+        className="hidden md:block absolute -left-18 top-3/4 -translate-y-1/2 w-[380px] opacity-30 pointer-events-none select-none z-20"
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 0.9 }}
         transition={{ duration: 1 }}
@@ -211,7 +211,7 @@ export default function Projects() {
       <motion.img
         src="/images/ola-mobile3.png"
         alt="Right Accent"
-        className="absolute -right-15 top-2/6 -translate-y-1/2 w-[350px] opacity-30 pointer-events-none select-none z-20"
+        className="hidden md:block absolute -right-15 top-2/6 -translate-y-1/2 w-[350px] opacity-30 pointer-events-none select-none z-20"
         initial={{ x: 200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 0.9 }}
         transition={{ duration: 1 }}

@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen flex flex-col items-start justify-center px-10 sm:px-24 text-left overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col items-start justify-center px-4 sm:px-10 md:px-24 text-left overflow-hidden"
     >
       <div
         className="absolute inset-0 bg-fixed"
@@ -69,9 +69,8 @@ export default function Hero() {
         viewport={{ amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Added image here */}
         <motion.div
-          className="relative mb-6 inline-block backdrop-blur-md rounded-2xl bg-white/10 p-2"
+          className="relative mb-6 inline-block backdrop-blur-md rounded-2xl bg-white/10 p-1 sm:p-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -79,7 +78,7 @@ export default function Hero() {
           <img
             src="/images/ig-gold.png"
             alt="Profile QR"
-            className="w-32 sm:w-40 rounded-xl"
+            className="w-24 sm:w-32 md:w-40 rounded-xl"
           />
         </motion.div>
 
@@ -88,38 +87,38 @@ export default function Hero() {
           delay={150}
           animateBy="words"
           direction="top"
-          className="text-6xl sm:text-7xl font-bold mb-6"
+          className="text-4xl sm:text-6xl md:text-7xl font-bold mb-4 sm:mb-6"
           animationFrom={undefined}
           animationTo={undefined}
           onAnimationComplete={() => {}}
         />
 
-        <p className="text-[#CEAE7B] text-3xl sm:text-4xl font-semibold mb-10 max-w-full overflow-x-auto whitespace-nowrap">
+        <p className="text-[#CEAE7B] text-xl sm:text-3xl md:text-4xl font-semibold mb-6 sm:mb-10 max-w-full overflow-x-auto whitespace-nowrap">
           {displayText}
         </p>
 
-        <div className="flex gap-6">
-          <div className="relative inline-flex rounded-full overflow-hidden bg-zinc-900 w-[360px] h-14">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <div className="relative inline-flex flex-col sm:flex-row rounded-full overflow-hidden bg-zinc-900 w-full sm:w-[360px] h-auto sm:h-14">
             <a
               href="#projects"
-              className="flex-1 flex items-center justify-center text-zinc-50 transition hover:text-[#CEAE7B]"
+              className="flex-1 flex items-center justify-center py-2 sm:py-0 text-zinc-50 transition hover:text-[#CEAE7B]"
             >
               View Projects
             </a>
+            <span className="hidden sm:block absolute top-0 bottom-0 left-1/2 w-px bg-zinc-700 transform rotate-12 origin-center pointer-events-none"></span>
             <a
               href="#contact"
-              className="flex-1 flex items-center justify-center text-zinc-50 transition hover:text-[#CEAE7B]"
+              className="flex-1 flex items-center justify-center py-2 sm:py-0 text-zinc-50 transition hover:text-[#CEAE7B]"
             >
               Contact Me
             </a>
-
-            <span className="absolute top-0 bottom-0 left-1/2 w-px bg-zinc-700 transform rotate-12 origin-center pointer-events-none"></span>
           </div>
+
           <a
             href="/Marvirt Lester Bajao.pdf"
             download
-            className="px-8 py-4 border border-[#CEAE7B] text-[#CEAE7B] rounded-full font-semibold flex items-center gap-2 transition 
-                        hover:bg-[#CEAE7B] hover:text-black hover:border-zinc-700"
+            className="px-6 sm:px-8 py-3 sm:py-4 border border-[#CEAE7B] text-[#CEAE7B] rounded-full font-semibold flex items-center gap-2 transition 
+                        hover:bg-[#CEAE7B] hover:text-black hover:border-zinc-700 text-center"
           >
             <FaFileAlt className="text-lg" />
             Download CV
