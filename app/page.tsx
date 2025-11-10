@@ -15,8 +15,48 @@ export default function Home() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFadeOut(true), 1700); // start fading before removing
-    const removeTimer = setTimeout(() => setShowSplash(false), 2000); // remove after fade
+    let fadeTimer: NodeJS.Timeout;
+    let removeTimer: NodeJS.Timeout;
+
+    const preloadImages = async () => {
+      const images = [
+        "/personal-projects/cdv.png",
+        "/personal-projects/mt-forms.png",
+        "/personal-projects/sja.png",
+        "/personal-projects/cifras-pizza.png",
+        "/personal-projects/crypto-react.png",
+        "/personal-projects/gag-app.png",
+        "/personal-projects/xureels.png",
+        "/personal-projects/fakestore-api.png",
+        "/personal-projects/ola-mobile.png",
+        "/images/mtmas-cdv.png",
+        "/images/mt-forms-icon.png",
+        "/images/sja-header.png",
+        "/images/cifras-tab-icon.png",
+        "/images/cryptofaceauth-header.png",
+        "/images/gag-header.png",
+        "/images/xure-header2.png",
+        "/images/publicapi-header.png",
+      ];
+
+      const promises = images.map(
+        (src) =>
+          new Promise<void>((resolve) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+          })
+      );
+
+      await Promise.all(promises);
+
+      fadeTimer = setTimeout(() => setFadeOut(true), 1700);
+      removeTimer = setTimeout(() => setShowSplash(false), 2000);
+    };
+
+    preloadImages();
+
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
