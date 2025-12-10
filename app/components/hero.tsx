@@ -70,13 +70,20 @@ export default function Hero() {
       id="hero"
       className="relative w-full min-h-screen flex flex-col items-start justify-center px-4 sm:px-10 md:px-24 text-left overflow-hidden"
     >
-      <div
-        className="absolute inset-0 bg-fixed bg-cover sm:bg-[center_top_25%] bg-center"
-        style={{
-          backgroundImage: "url('/images/me.jpg')",
-          opacity: 0.6,
-        }}
-      />
+      <div className="absolute inset-0">
+        {isMobile ? (
+          <img
+            src="/images/me.jpg"
+            className="w-full h-full object-cover sm:object-[center_top_25%] opacity-60"
+            alt="Background"
+          />
+        ) : (
+          <div
+            className="bg-fixed bg-cover sm:bg-[center_top_25%] bg-center w-full h-full"
+            style={{ backgroundImage: "url('/images/me.jpg')", opacity: 0.6 }}
+          />
+        )}
+      </div>
 
       <div className="absolute inset-0 bg-black/40" />
 
