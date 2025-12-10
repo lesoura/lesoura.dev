@@ -50,15 +50,13 @@ export default function Hero() {
       id="hero"
       className="relative w-full min-h-screen flex flex-col items-start justify-center px-4 sm:px-10 md:px-24 text-left overflow-hidden"
     >
-     <div
-  className="absolute inset-0 bg-fixed"
-  style={{
-    backgroundImage: "url('/images/me.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: window.innerWidth >= 640 ? "center top 25%" : "center",
-    opacity: 0.6,
-  }}
-/>
+      <div className="absolute inset-0 overflow-hidden">
+  <img
+    src="/images/me.jpg"
+    className="w-full h-full object-cover sm:object-[center_top_25%] opacity-60"
+    alt="Background"
+  />
+</div>
 
 
       <div className="absolute inset-0 bg-black/40" />
