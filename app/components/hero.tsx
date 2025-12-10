@@ -51,14 +51,13 @@ export default function Hero() {
       className="relative w-full min-h-screen flex flex-col items-start justify-center px-4 sm:px-10 md:px-24 text-left overflow-hidden"
     >
       <div
-        className="absolute inset-0 bg-fixed"
+        className="absolute inset-0 bg-fixed bg-cover sm:bg-[center_top_25%] bg-center"
         style={{
           backgroundImage: "url('/images/me.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center top 25%",
           opacity: 0.6,
         }}
       />
+
       <div className="absolute inset-0 bg-black/40" />
 
       <motion.div
