@@ -51,12 +51,12 @@ export default function Hero() {
       className="relative w-full min-h-screen flex flex-col items-start justify-center px-4 sm:px-10 md:px-24 text-left overflow-hidden"
     >
       <div
-  className="absolute inset-0 bg-fixed sm:bg-[center_top_25%] sm:bg-auto bg-center bg-cover"
-  style={{
-    backgroundImage: "url('/images/me.jpg')",
-    opacity: 0.6,
-  }}
-/>
+        className="absolute inset-0 bg-fixed sm:object-[center_top_25%] bg-center bg-cover"
+        style={{
+          backgroundImage: "url('/images/me.jpg')",
+          opacity: 0.6,
+        }}
+      />
 
 
       <div className="absolute inset-0 bg-black/40" />
