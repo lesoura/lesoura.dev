@@ -17,6 +17,13 @@ export default function Hero() {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
+useEffect(() => {
+  const checkScreen = () => setIsMobile(window.innerWidth < 640); // Tailwind 'sm'
+  checkScreen();
+  window.addEventListener("resize", checkScreen);
+  return () => window.removeEventListener("resize", checkScreen);
+}, []);
+
   useEffect(() => {
     const changeTitle = setInterval(() => {
       setCurrent((prev) => (prev + 1) % titles.length);
@@ -46,44 +53,26 @@ export default function Hero() {
     };
   }, [current]);
 
-  useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth < 640); // Tailwind 'sm' breakpoint
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
-
-  if (isMobile) {
-    return (
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src="/images/me.jpg"
-          className="w-full h-full object-cover sm:object-[center_top_25%] opacity-60"
-          alt="Background"
-        />
-      </div>
-    );
-  }
-
   return (
     <section
       id="hero"
       className="relative w-full min-h-screen flex flex-col items-start justify-center px-4 sm:px-10 md:px-24 text-left overflow-hidden"
     >
       <div className="absolute inset-0">
-        {isMobile ? (
-          <img
-            src="/images/me.jpg"
-            className="w-full h-full object-cover sm:object-[center_top_25%] opacity-60"
-            alt="Background"
-          />
-        ) : (
-          <div
-            className="bg-fixed bg-cover sm:bg-[center_top_25%] bg-center w-full h-full"
-            style={{ backgroundImage: "url('/images/me.jpg')", opacity: 0.6 }}
-          />
-        )}
-      </div>
+  {isMobile ? (
+    <img
+      src="/images/me.jpg"
+      className="w-full h-full object-cover opacity-60"
+      alt="Background"
+    />
+  ) : (
+    <div
+      className="bg-fixed bg-cover sm:bg-[center_top_25%] bg-center w-full h-full"
+      style={{ backgroundImage: "url('/images/me.jpg')", opacity: 0.6 }}
+    />
+  )}
+</div>
+
 
       <div className="absolute inset-0 bg-black/40" />
 
