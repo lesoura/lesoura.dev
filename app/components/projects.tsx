@@ -12,6 +12,7 @@ interface Project {
   type: "image" | "video";
   header?: string;
   category: "Web" | "Mobile";
+  link?: string;
 }
 
 const projects: Project[] = [
@@ -47,14 +48,15 @@ const projects: Project[] = [
     header: "/images/sja-header.png",
   },
   {
-  id: 4,
-  title: "Cifra's Pizza",
-  description:
-    "Web-based interactive pizzeria website for Cifra’s Pizza featuring a dynamic hero section, animated carousel, glowing buttons, and responsive layout. Designed for an engaging, modern browsing experience built with React and Framer Motion.",
-  media: "/personal-projects/cifras-pizza.png",
-  type: "image",
-  category: "Web",
-  header: "/images/cifras-tab-icon.png",
+    id: 4,
+    title: "Cifra's Pizza",
+    description:
+      "Web-based interactive pizzeria website for Cifra’s Pizza featuring a dynamic hero section, animated carousel, glowing buttons, and responsive layout. Designed for an engaging, modern browsing experience built with React and Framer Motion.",
+    media: "/personal-projects/cifras-pizza.png",
+    type: "image",
+    category: "Web",
+    header: "/images/cifras-tab-icon.png",
+    link: "https://cifras-pizza.vercel.app/",
   },
   {
     id: 5,
@@ -66,7 +68,6 @@ const projects: Project[] = [
     category: "Web",
     header: "/images/cryptofaceauth-header.png",
   },
-  // MOBILE projects
   {
     id: 6,
     title: "GrowAGardenApp",
@@ -107,6 +108,17 @@ const projects: Project[] = [
     category: "Mobile",
     header: "/images/mtmas-cdv.png",
   },
+  {
+    id: 10,
+    title: "Broadhead Technologies",
+    description:
+      "Proposed UI/UX design for Broadhead Technologies’ official website. Broadhead Technologies is a growing tech-focused company, and this project is an ongoing collaboration currently under discussion with the CEO. The design emphasizes a clean, modern layout, clear information hierarchy, responsive sections, and a professional visual identity aligned with the company’s services and future direction.",
+    media: "/personal-projects/broadhead-technologies.png",
+    type: "image",
+    category: "Web",
+    header: "/images/broadhead-cover.png",
+    link: "https://broadhead-technologies.vercel.app/",
+  }
 ];
 
 export default function Projects() {
@@ -197,6 +209,12 @@ export default function Projects() {
             <span className="bg-teal-500 text-white px-2 py-0.5 rounded text-xs">API</span>
           </>
         );
+      case 10:
+         return (
+          <>
+            <span className="bg-[#CEAE7B] text-white px-2 py-0.5 rounded text-xs">React</span>
+          </>
+        );
       default:
         return null;
     }
@@ -213,142 +231,155 @@ export default function Projects() {
   }, [current]);
 
   return (
-<section id="projects" className="relative w-full py-10 overflow-hidden" style={{ height: "90vh" }}>
-      {/* LEFT accent image */}
-      <motion.img
-        src="/images/xureels4.png"
-        alt="Left Accent"
-        className="hidden md:block absolute -left-18 top-3/4 -translate-y-1/2 w-[380px] opacity-30 pointer-events-none select-none z-20"
-        initial={{ x: -200, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 0.9 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: false }}
-      />
+  <section id="projects" className="relative w-full py-10 overflow-hidden" style={{ height: "90vh" }}>
+        {/* LEFT accent image */}
+        <motion.img
+          src="/images/xureels4.png"
+          alt="Left Accent"
+          className="hidden md:block absolute -left-18 top-3/4 -translate-y-1/2 w-[380px] opacity-30 pointer-events-none select-none z-20"
+          initial={{ x: -200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 0.9 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false }}
+        />
 
-      {/* RIGHT accent image */}
-      <motion.img
-        src="/images/ola-mobile3.png"
-        alt="Right Accent"
-        className="hidden md:block absolute -right-15 top-2/6 -translate-y-1/2 w-[350px] opacity-30 pointer-events-none select-none z-20"
-        initial={{ x: 200, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 0.9 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: false }}
-      />
+        {/* RIGHT accent image */}
+        <motion.img
+          src="/images/ola-mobile3.png"
+          alt="Right Accent"
+          className="hidden md:block absolute -right-15 top-2/6 -translate-y-1/2 w-[350px] opacity-30 pointer-events-none select-none z-20"
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 0.9 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false }}
+        />
 
-      {/* Main Content */}
-      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto">
-        <motion.h2
-          className="text-4xl font-bold mb-12 text-center"
-          style={{ color: "#CEAE7B" }}
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          PROJECTS
-        </motion.h2>
-
-        {/* Carousel */}
-        <div className="relative flex items-center justify-center">
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 bg-black/40 text-white p-3 rounded-full z-30 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
+        {/* Main Content */}
+        <div className="relative z-10 w-full max-w-7xl px-6 mx-auto">
+          <motion.h2
+            className="text-4xl font-bold mb-12 text-center"
+            style={{ color: "#CEAE7B" }}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            <FaChevronLeft />
-          </button>
+            PROJECTS
+          </motion.h2>
 
-          <div className="overflow-hidden w-full">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.4 }}
-              className="flex justify-center gap-6"
+          {/* Carousel */}
+          <div className="relative flex items-center justify-center">
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 bg-black/40 text-white p-3 rounded-full z-30 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
             >
-              {getVisibleProjects().map((project) => (
-                <div
-                  key={project.id}
-                  className="w-[350px] min-h-[470px] bg-zinc-900 rounded-lg text-zinc-50 shadow-lg flex flex-col"
-                >
-                  {project.header && (
-                    <img
-                      src={project.header}
-                      alt={project.title}
-                      className="w-full h-40 object-contain bg-black rounded-t-lg border-b-4 border-[#CEAE7B] p-1"
-                    />
-                  )}
-                  <div className="p-4 flex flex-col flex-grow">
-                    <h3 className="font-semibold text-lg">{project.title}</h3>
-                    <p className="text-zinc-400 text-sm break-words text-justify">
-                      {project.description}
-                    </p>
-                    <div className="mt-2 mb-2 flex flex-wrap gap-1">
-                      {renderLegend(project.id)}
+              <FaChevronLeft />
+            </button>
+
+            <div className="overflow-hidden w-full">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.4 }}
+                className="flex justify-center gap-6"
+              >
+                {getVisibleProjects().map((project) => (
+                  <div
+                    key={project.id}
+                    className="w-[350px] min-h-[470px] bg-zinc-900 rounded-lg text-zinc-50 shadow-lg flex flex-col"
+                  >
+                    {project.header && (
+                      <img
+                        src={project.header}
+                        alt={project.title}
+                        className="w-full h-40 object-contain bg-black rounded-t-lg border-b-4 border-[#CEAE7B] p-1"
+                      />
+                    )}
+                    <div className="p-4 flex flex-col flex-grow">
+                      <h3 className="font-semibold text-lg">{project.title}</h3>
+                      <p className="text-zinc-400 text-sm break-words text-justify">
+                        {project.description}
+                      </p>
+                      <div className="mt-2 mb-2 flex flex-wrap gap-1">
+                        {renderLegend(project.id)}
+                      </div>
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="mt-auto relative overflow-hidden border border-[#CEAE7B] text-[#CEAE7B] font-semibold py-1 px-3 rounded group"
+                      >
+                        <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                          Explore
+                        </span>
+                        <span className="absolute inset-0 bg-[#CEAE7B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
+                      </button>
                     </div>
-                    <button
-                      onClick={() => setSelectedProject(project)}
-                      className="mt-auto relative overflow-hidden border border-[#CEAE7B] text-[#CEAE7B] font-semibold py-1 px-3 rounded group"
-                    >
-                      <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                        Explore
-                      </span>
-                      <span className="absolute inset-0 bg-[#CEAE7B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
-                    </button>
                   </div>
-                </div>
-              ))}
-            </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 bg-black/40 text-white p-3 rounded-full z-30 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
+            >
+              <FaChevronRight />
+            </button>
           </div>
 
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 bg-black/40 text-white p-3 rounded-full z-30 transition-colors duration-300 hover:bg-[#CEAE7B] hover:text-black"
-          >
-            <FaChevronRight />
-          </button>
+          {/* Dots */}
+          <div className="flex justify-center mt-4 gap-2">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrent(index)}
+                className={`w-3 h-3 rounded-full ${
+                  index === current ? "bg-[#CEAE7B]" : "bg-zinc-600"
+                } transition`}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Dots */}
-        <div className="flex justify-center mt-4 gap-2">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={`w-3 h-3 rounded-full ${
-                index === current ? "bg-[#CEAE7B]" : "bg-zinc-600"
-              } transition`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Modal */}
-      <AnimatePresence>
-        {selectedProject && (
-          <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedProject(null)}
-          >
+        {/* Modal */}
+        <AnimatePresence>
+          {selectedProject && (
             <motion.div
-              className="bg-zinc-900/20 backdrop-blur-md rounded-[100px] max-w-3xl w-full overflow-hidden"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              onClick={(e) => e.stopPropagation()}
+              className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
             >
-              {selectedProject.type === "video" ? (
-                <video src={selectedProject.media} controls autoPlay className="w-full h-auto" />
-              ) : (
-                <img src={selectedProject.media} alt={selectedProject.title} className="w-full h-auto" />
-              )}
+              <motion.div
+                className="bg-zinc-900/20 backdrop-blur-md rounded-[100px] max-w-3xl w-full overflow-hidden"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {selectedProject.type === "video" ? (
+                  <video src={selectedProject.media} controls autoPlay className="w-full h-auto" />
+                ) : (
+                  <img src={selectedProject.media} alt={selectedProject.title} className="w-full h-auto" />
+                )}
+
+                {selectedProject.link && (
+                  <div className="p-6 text-center">
+                    <a
+                      href={selectedProject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block border border-[#CEAE7B] text-[#CEAE7B] px-6 py-2 rounded-full font-semibold hover:bg-[#CEAE7B] hover:text-black transition"
+                    >
+                      Visit Project
+                    </a>
+                  </div>
+                )}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </section>
+          )}
+        </AnimatePresence>
+      </section>
   );
 }
