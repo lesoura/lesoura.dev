@@ -118,6 +118,16 @@ const projects: Project[] = [
     category: "Web",
     header: "/images/broadhead-cover.png",
     link: "https://broadhead-technologies.vercel.app/",
+  },
+  {
+    id: 11,
+    title: "Inkwisyo",
+    description:
+      "Commissioned mobile app mockup for a Digital Arts group thesis project. Inkwisyo showcases a tattoo shop concept with brief insights into tattoo history, transforming the group’s Figma UI/UX design into an interactive mobile prototype. The project was successfully presented and approved by their thesis panelists.",
+    media: "/personal-projects/inkwisyo-app.png",
+    type: "image",
+    category: "Mobile",
+    header: "/images/inkwisyo.png",
   }
 ];
 
@@ -213,6 +223,12 @@ export default function Projects() {
          return (
           <>
             <span className="bg-[#CEAE7B] text-white px-2 py-0.5 rounded text-xs">React</span>
+          </>
+        );
+      case 11:
+         return (
+          <>
+            <span className="bg-[#CEAE7B] text-white px-2 py-0.5 rounded text-xs">React Native Expo</span>
           </>
         );
       default:
