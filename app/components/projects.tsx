@@ -127,7 +127,7 @@ const projects: Project[] = [
     media: "/personal-projects/inkwisyo-app.png",
     type: "image",
     category: "Mobile",
-    header: "/images/inkwisyo.png",
+    header: "/images/Inkwisyo.png",
   }
 ];
 
