@@ -11,7 +11,7 @@ interface Project {
   media: string;
   type: "image" | "video";
   header?: string;
-  category: "Web" | "Mobile";
+  category: "Web" | "Mobile" | "Desktop Application";
   link?: string;
 }
 
@@ -128,6 +128,16 @@ const projects: Project[] = [
     type: "image",
     category: "Mobile",
     header: "/images/Inkwisyo.png",
+  },
+  {
+    id: 12,
+    title: "HRMS",
+    description:
+      "Enhanced the HRMS reporting module by updating summary Crystal Reports for government contributions (SSS, PhilHealth, Pag-IBIG, and BIR), restructuring entries to be grouped by bank and adding grand totals for improved clarity and reporting accuracy.",
+    media: "/personal-projects/HRMS.png",
+    type: "image",
+    category: "Desktop Application",
+    header: "/images/HRMS.png",
   }
 ];
 
@@ -236,6 +246,7 @@ export default function Projects() {
           <>
             <span className="bg-blue-600 text-white px-2 py-0.5 rounded text-xs">C#</span>
             <span className="bg-amber-600 text-white px-2 py-0.5 rounded text-xs">Crystal Report</span>
+            <span className="bg-blue-300 text-white px-2 py-0.5 rounded text-xs">WinForms</span>
           </>
         );
       default:
