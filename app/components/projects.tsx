@@ -231,6 +231,13 @@ export default function Projects() {
             <span className="bg-[#CEAE7B] text-white px-2 py-0.5 rounded text-xs">React Native Expo</span>
           </>
         );
+      case 12:
+         return (
+          <>
+            <span className="bg-blue-600 text-white px-2 py-0.5 rounded text-xs">C#</span>
+            <span className="bg-amber-600 text-white px-2 py-0.5 rounded text-xs">Crystal Report</span>
+          </>
+        );
       default:
         return null;
     }
